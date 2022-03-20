@@ -36,7 +36,7 @@ class Orderproduct
         $result = $db->select_to_array($sql);
         return $result;
     }
-    public static function list_product_by_userid($userid)
+    public static function list_orderproduct_by_userid($userid)
     {
         $db = new Db();
         $sql = "SELECT * FROM orderproduct where UserId='$userid'";
@@ -44,7 +44,7 @@ class Orderproduct
         return $result;
     }
     
-    public static function get_product($id)
+    public static function get_orderproduct($id)
     {
         $db = new Db();
         $sql = "SELECT * FROM orderproduct WHERE OrderID='$id'";

@@ -82,5 +82,21 @@ class Product
         $result = $db->select_to_array($sql);
         return $result;
     }
+    public static function delete_product($productId)
+    {
+        $db = new Db();
+        $sql = "DELETE FROM product WHERE productID='$productId'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
+    public static function update_product($productId,$pro_name, $cate_id, $price, $quantity, $desc, $picture,$promotion_ID,$trademark_ID)
+    {
+        $db = new Db();
+        $sql = "UPDATE product
+                SET ProductName= $pro_name , CateID= $cate_id , Price= $price , Quantity= $quantity , Description= $desc , Picture= $picture , PromotionID= $promotion_ID , TrademarkID = $trademark_ID
+                WHERE productID='$productId'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
 
 }
