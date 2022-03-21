@@ -1,5 +1,5 @@
 <?php //IDEA
-require_once("/xampp/htdocs/LAB03/config/db.class.php");
+require_once("/xampp/htdocs/Shopmobies/config/db.class.php");
 
 class Orderproduct
 {

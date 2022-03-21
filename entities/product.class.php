@@ -1,5 +1,5 @@
 <?php //IDEA
-require_once("/xampp/htdocs/LAB03/config/db.class.php");
+require_once("/xampp/htdocs/shopmobies/config/db.class.php");
 
 class Product
 {
@@ -86,7 +86,7 @@ class Product
     {
         $db = new Db();
         $sql = "DELETE FROM product WHERE productID='$productId'";
-        $result = $db->select_to_array($sql);
+        $result = $db->query_execute($sql);
         return $result;
     }
     public static function update_product($productId,$pro_name, $cate_id, $price, $quantity, $desc, $picture,$promotion_ID,$trademark_ID)
@@ -95,7 +95,7 @@ class Product
         $sql = "UPDATE product
                 SET ProductName= $pro_name , CateID= $cate_id , Price= $price , Quantity= $quantity , Description= $desc , Picture= $picture , PromotionID= $promotion_ID , TrademarkID = $trademark_ID
                 WHERE productID='$productId'";
-        $result = $db->select_to_array($sql);
+        $result = $db->query_execute($sql);
         return $result;
     }
 

@@ -36,7 +36,7 @@ class User{
         $password = md5($password);
         $db = new Db();
         $sql = "SELECT * FROM users where UserName ='$username' and Password = '$password'";
-        $result = $db->query_execute($sql);
+        $result = $db->select_to_array($sql);
         return $result;
     }
     
