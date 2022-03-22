@@ -22,6 +22,6 @@
         echo "<h2>Xin chào: " . $_SESSION['user'] . "<a href='/Shopmobies/logout.php'> Logout</a></h2>";
       } else {
         echo "<h2> Bạn chưa đăng nhập <a href=' /Shopmobies/login.php'>Login</a> - <a
-  href='/lab03/register.php'>Register</a></h2>";
+  href='/Shopmobies/register.php'>Register</a></h2>";
       }
       ?>
