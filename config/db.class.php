@@ -25,6 +25,17 @@ class DB
         $connection->query("SET NAMES utf8");
 
         $result = $connection->query($queryString);
+        return $result;
+
+    }
+    public function query_execute_statement($queryString,$productName,$cateID,$price,$quantity,$description,$pictureimg,$promotin,$trademark)
+    {
+        $connection = $this->connnect();
+        $connection->query("SET NAMES utf8");
+
+        $stmt = $connection->prepare($queryString);
+        $result=$stmt -> bind_param("sidissii", $productName,$cateID,$price,$quantity,$description,$pictureimg,$promotin,$trademark);
+        
         //$connection->close();
         return $result;
 

@@ -8,8 +8,9 @@ class Promotion
 
     public function __construct($desc,$value_1)
     {
-        $this->value = $value_1;
         $this->description =$desc;
+        $this->value = $value_1;
+        
     
     }
     public static function list_promotion(){
