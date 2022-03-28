@@ -21,35 +21,51 @@
         <li>
             <a href="/ShopMobies/list_product.php"> Danh sách sản phẩm</a>
         </li>
-        
+
     </ul>
     <h3>Danh mục</h3>
     <?php
 
     $cates = Category::list_category();
-
-    foreach ($cates as $item) {
-        echo "<li class ='list-group-item'><a
+    ?>
+    <div class="col-sm-3">
+        <h3>Danh mục</h3>
+        <ul class="list-group">
+            <?php
+            foreach ($cates as $item) {
+                echo "<li class ='list-group-item'><a
             href=/ShopMobies/list_product.php?cateid=" . $item["CateID"] . ">" . $item["CategoryName"] . "</a></li>";
-    }
-    ?>
+            }
+            ?>
+        </ul>
+    </div>
 
-<ul class="menu">
-    <h3>Thương hiệu</h3>
-    </ul>
-    <?php
-
-    $trades = Trademark::list_trademark();
-
-    foreach ($trades as $item) {
-        echo "<li class ='list-group-item'><a
-            href=/ShopMobies/list_product.php?trademarkid=" . $item["TrademarkID"] . ">" . $item["TrademarkName"] . "</a></li>";
-    }
-    ?>
-    <?php include_once("footer.php"); ?>
 
 
     
+    <h3>Thương hiệu</h3>
+    
+    <?php
+
+    $trades = Trademark::list_trademark();
+    ?>
+    <div class="col-sm-1">
+    
+        <ul class="list-group">
+            <?php
+            foreach ($trades as $item) {
+                echo "<li class ='list-group-item'><a
+            href=/ShopMobies/list_product.php?trademarkid=" . $item["TrademarkID"] . ">" . $item["TrademarkName"] . "</a></li>";
+            }
+            ?>
+        </ul>
+    </div>
+
+
+    <?php include_once("footer.php"); ?>
+
+
+
 
 </body>
 

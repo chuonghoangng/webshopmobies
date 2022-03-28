@@ -31,7 +31,7 @@ $cates = Category::list_category();
 		</div>
 
 		<div class="col-sm-9">
-			<h3>san pham cua hang</h3>
+			<h3>SẢN PHẨM CỬA HÀNG</h3>
 			<div class="row">
 				<?php
 				foreach ($prods as $item) {
@@ -54,7 +54,7 @@ $cates = Category::list_category();
 							<?php echo $item["TrademarkName"]; ?>
 						</p>
 						<p class="text-info">
-							khuyến mãi: <?php echo $item["VALUE"]; ?> %
+							khuyến mãi: <?php echo $item["value"]; ?> %
 						</p>
 						<p>
 						<a href="/Shopmobies/shopping_cart.php?id=<?php echo $item["ProductID"]; ?>">

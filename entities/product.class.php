@@ -60,14 +60,14 @@ class Product
     public static function list_product_name()
     {
         $db = new Db();
-        $sql = "SELECT a.ProductID, a.ProductName, b.CategoryName, a.Price, a.Quantity, a.Description, a.Picture, d.TrademarkName, c.VALUE FROM product a, category b, promotion c, trademark d WHERE a.CateID =b.CateID and a.TrademarkID = d.TrademarkID and a.PromotionID = c.PromotionID;";
+        $sql = "SELECT a.ProductID, a.ProductName, b.CategoryName, a.Price, a.Quantity, a.Description, a.Picture, d.TrademarkName, c.value FROM product a, category b, promotion c, trademark d WHERE a.CateID =b.CateID and a.TrademarkID = d.TrademarkID and a.PromotionID = c.PromotionID";
         $result = $db->select_to_array($sql);
         return $result;
     }
     public static function list_product_by_cateid($cateid)
     {
         $db = new Db();
-        $sql = "SELECT * FROM product where CateId='$cateid'";
+        $sql = "SELECT a.ProductID, a.ProductName, b.CategoryName, a.Price, a.Quantity, a.Description, a.Picture, d.TrademarkName, c.value FROM product a, category b, promotion c, trademark d WHERE a.CateID =b.CateID and a.TrademarkID = d.TrademarkID and a.PromotionID = c.PromotionID and a.CateId='$cateid'";
         $result = $db->select_to_array($sql);
         return $result;
     }
@@ -117,5 +117,5 @@ class Product
         $result = $db->query_execute($sql);
         return $result;
     }
-    
+
 }
