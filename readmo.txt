@@ -1,0 +1,9 @@
+<p class="text-info">
+							<?php echo $item["CategoryName"]; ?>
+						</p>
+                        <p class="text-info">
+							<?php echo $item["TrademarkName"]; ?>
+						</p>
+						<p class="text-info">
+							<?php echo $item["VALUE"]; ?>
+						</p>
