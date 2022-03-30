@@ -35,8 +35,8 @@ class User{
     public static function checkLogin ($username, $password){
         $password = md5($password);
         $db = new Db();
-        $sql = "SELECT * FROM users where UserName ='$username' and Password = '$password'";
-        $result = $db->query_execute($sql);
+        $sql = "SELECT * FROM users where UserName ='$username' and PassWord = '$password'";
+        $result = $db->select_to_array($sql);
         return $result;
     }
     
