@@ -74,7 +74,8 @@ class Product
     public static function list_product_by_trademark($trademarkid)
     {
         $db = new Db();
-        $sql = "SELECT * FROM product where TrademarkID ='$trademarkid'";
+        $sql = "SELECT a.ProductID, a.ProductName, b.CategoryName, a.Price, a.Quantity, a.Description, a.Picture, d.TrademarkName, c.value FROM product a, category b, promotion c, trademark d WHERE a.CateID =b.CateID and a.TrademarkID = d.TrademarkID and a.PromotionID = c.PromotionID and d.TrademarkID='$trademarkid'";
+        //$sql = "SELECT * FROM product where TrademarkID ='$trademarkid'";
         $result = $db->select_to_array($sql);
         return $result;
     }
